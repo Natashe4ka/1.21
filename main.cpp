@@ -49,6 +49,14 @@ int main(){
         ++i;
     }
     inp.close();
+    
+    /*CIntN0 a(2, "45");
+
+    CIntN1 b(3, "100");
+
+    CIntN c = a  + b;
+    c.print();
+    */
 
     for(size_t j = 0; j < count; ++j){
         arr[j]->print(file_names[j]);
@@ -58,6 +66,7 @@ int main(){
         delete arr[j];
     }
     delete[] arr;
+    
 
     return 0;
 }

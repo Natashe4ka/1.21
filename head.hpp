@@ -14,8 +14,8 @@
 #include "CIntN0.hpp"
 #include "CIntN1.hpp"
 
-const CIntN operator-(CIntN, CIntN);
-const CIntN operator+(CIntN, CIntN);
+ CIntN operator-(CIntN&, CIntN&);
+ CIntN operator+(CIntN&, CIntN&);
 
 
 #endif 

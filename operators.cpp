@@ -2,7 +2,7 @@
 
 //const CIntN operator-(CIntN, CIntN);
 
-const CIntN operator+(CIntN X, CIntN Y) {
+ CIntN operator+(CIntN& X, CIntN& Y) {
     CIntN sum;
     int i=X.get_lenght() -1;
     int j=Y.get_lenght() -1;
@@ -96,7 +96,7 @@ const CIntN operator+(CIntN X, CIntN Y) {
     return sum;
 }
 
-const CIntN operator-(CIntN X, CIntN Y) {
+ CIntN operator-(CIntN& X, CIntN& Y) {
     CIntN dif;
     int i=X.get_lenght() -1;
     int j=Y.get_lenght() -1;
