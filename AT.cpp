@@ -38,7 +38,7 @@ int AutoTest3(){
     while (getline(inp, line)){
         
         //std::cout << line<<"\n";
-        if (line==f or line==s or line==th or line==forth)  flag++;
+        if (line==f || line==s || line==th || line==forth)  flag++;
         
     }
     remove ("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
