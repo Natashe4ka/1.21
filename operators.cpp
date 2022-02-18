@@ -2,8 +2,10 @@
 
 //const CIntN operator-(CIntN, CIntN);
 
- CIntN operator+(CIntN& X, CIntN& Y) {
-    CIntN sum;
+ CIntN0 operator+(const CIntN& A, const CIntN& B) {
+    CIntN0 X = A;
+    CIntN0 Y = B;
+    CIntN0 sum;
     int i=X.get_lenght() -1;
     int j=Y.get_lenght() -1;
     int k;
@@ -12,21 +14,21 @@
        sum.new_sign('-');
     }
     else if (X.get_sign() == '-' && Y.get_sign() == '+') {
-        CIntN f_h;
+        CIntN0 f_h;
         f_h = X;
         f_h.new_sign('+');
         sum = Y-f_h;
         return sum;
     }
     else if (X.get_sign() == '+' && Y.get_sign() == '-') {
-        CIntN f_h;
+        CIntN0 f_h;
         f_h = Y;
         f_h.new_sign('+');
         sum = X-f_h;
         return sum;
     }
     if(i < j){
-        CIntN H;
+        CIntN0 H;
         H = X;
         X = Y;
         Y = H;
@@ -96,24 +98,26 @@
     return sum;
 }
 
- CIntN operator-(CIntN& X, CIntN& Y) {
-    CIntN dif;
+ CIntN0 operator-(const CIntN& A, const CIntN& B) {
+     CIntN0 X = A;
+     CIntN0 Y = B;
+    CIntN0 dif;
     int i=X.get_lenght() -1;
     int j=Y.get_lenght() -1;
     int k=0;
     
     if(X.get_sign() == '+' && Y.get_sign() == '-') {
-        CIntN tmp; tmp = Y; tmp.new_sign('+');
+        CIntN0 tmp; tmp = Y; tmp.new_sign('+');
         dif = X + tmp;
         return dif;
       }
       if (X.get_sign() == '-' && Y.get_sign() == '+') {
-        CIntN tmp = Y; tmp.new_sign('-');
+        CIntN0 tmp = Y; tmp.new_sign('-');
         dif = X + tmp;
         return dif;
       }
       if (X.get_sign() == '-' && Y.get_sign() == '-') {
-        CIntN tmp = X; tmp.new_sign('+');
+        CIntN0 tmp = X; tmp.new_sign('+');
         X = Y; X.new_sign('+');
         Y = tmp;
       }
@@ -130,7 +134,7 @@
                     }
             }
         if(er == 0){
-            CIntN fh;
+            CIntN0 fh;
             fh = X;
             X = Y;
             Y =fh;
@@ -139,7 +143,7 @@
      }
         
      else if(i < j){
-        CIntN H;
+        CIntN0 H;
         H = X;
         X = Y;
         Y = H;

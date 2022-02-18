@@ -3,7 +3,7 @@
 
 int main(){
     
-    if (!AutoTest() ) {
+   if (!AutoTest() ) {
         std::cout << "Autotests failed!\n";
         return 0;
     }
@@ -24,7 +24,7 @@ int main(){
     while(getline(inp, line)) ++count;
     inp.close();
 
-    std::vector<std::string> file_names; //имена файлов для вывода
+    //std::vector<std::string> file_names; //имена файлов для вывода
     CIntN** arr = new CIntN*[count]; //массив указателей класса
 
     inp.open(file);
@@ -37,15 +37,23 @@ int main(){
         std::string num;
         inp >> num;
         if(I == 0){
-            if (i < count)
-                arr[i] = new CIntN0(static_cast<int>(num.size()), num);
+            if (i < count) {
+                int l =static_cast<int>(num.size());
+                if (num[0]=='-') l--;
+                arr[i] = new CIntN0(l, num);
+                arr[i]->new_file_name(FileName);
+            }
         }
         else
         {
-            if (i < count)
-                arr[i] = new CIntN1(static_cast<int>(num.size()), num);
+            if (i < count) {
+                int l =static_cast<int>(num.size());
+                if (num[0]=='-') l--;
+                arr[i] = new CIntN1(l, num);
+                arr[i]->new_file_name(FileName);
+            }
         }
-        file_names.push_back(FileName);
+       // file_names.push_back(FileName);
         ++i;
     }
     inp.close();
@@ -59,7 +67,7 @@ int main(){
     */
 
     for(size_t j = 0; j < count; ++j){
-        arr[j]->print(file_names[j]);
+        arr[j]->print();
     }
     
     for(size_t j = 0; j < count; ++j){

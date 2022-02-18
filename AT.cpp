@@ -2,19 +2,19 @@
 
 
 int AutoTest1(){
-    CIntN X, Y;
+    CIntN0 X, Y;
     X.new_number("1");
     Y.new_number("10");
-    CIntN Z=X+Y;
+    CIntN0 Z=X+Y;
     if (Z.get_number()[0]==1 && Z.get_number()[1]==1) return 1;
     else return 0;
 }
 
 int AutoTest2(){
-    CIntN X, Y;
+    CIntN1 X, Y;
     X.new_number("10");
     Y.new_number("9");
-    CIntN Z=X-Y;
+    CIntN1 Z=X-Y;
     if (Z.get_number()[0]==1) return 1;
     else return 0;
 }
@@ -25,15 +25,20 @@ int AutoTest3(){
     CIntN** arr = new CIntN*[2];
     arr[0] = new CIntN0(2, "25");
     arr[1] = new CIntN1(3, "399");
-    arr[0]->print("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
-    arr[1]->print("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+    arr[0]->new_file_name("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+    //arr[0]->print("AT.txt");
+    arr[1]->new_file_name("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+    arr[0]->print();
+    arr[1]->print();
+    //arr[1]->print("AT.txt");
     
-    std::string f = "2 + 25";
+    std::string f = "2 5";
     std::string s = "3";
-    std::string th = "+";
-    std::string forth = "399";
+    std::string th = "9";
+    std::string forth = "9";
     
     std::ifstream inp("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+    //std::ifstream inp("AT.txt");
     std::string line;
     while (getline(inp, line)){
         
@@ -41,7 +46,8 @@ int AutoTest3(){
         if (line==f || line==s || line==th || line==forth)  flag++;
         
     }
-    remove ("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+  remove ("/Users/nataliasafonova/Desktop/c++4/1/n.1/n.1/AT.txt");
+    //remove ("AT.txt");
     if (flag==4) return 1;
     else return 0;
     

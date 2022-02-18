@@ -13,17 +13,23 @@ CIntN::CIntN (int N) {
 CIntN::CIntN (int N, std::string x) {
         lenght_number = N;
         number = new int[N];
+    
+        
         if (x[0]=='-') {
             sign = '-';
             x.erase (0,1);
         }
+    
         else sign = '+';
+  //  std::cout << x<<"\n";
+    
         for (int i=0; i<N; i++) {
-            number [i] = stoi(x.substr(i, 1));
+            //number [i] = stoi(x.substr(i, 1));
+            number[i]=static_cast<int>(x[i])-48;
         }
     }
     
-    void CIntN::print (){
+    void CIntN::printf (){
         if (sign != '+') std::cout << sign;
         for (int i=0; i<lenght_number; i++){
             std::cout <<number[i];
@@ -31,8 +37,8 @@ CIntN::CIntN (int N, std::string x) {
         std::cout << std::endl;
     }
     
-    void CIntN::print(const std::string& FileName){
-        std::ofstream out(FileName, std::ios_base::app);
+    void CIntN::print(){
+        std::ofstream out(file_name, std::ios_base::app);
         if(!out){
             std::cout << "Error! Cannot open file!\n";
             exit(-1);
@@ -51,15 +57,21 @@ CIntN::CIntN () {
         number = NULL;
     }
     
-    char CIntN::get_sign () {
+    char CIntN::get_sign () const{
         return sign;
     }
-    int CIntN::get_lenght () {
+    int CIntN::get_lenght () const{
         return lenght_number;
     }
     int* CIntN::get_number () const {
         return number;
     }
+
+    void CIntN::new_file_name (const std::string& FileName) {
+    
+        file_name = FileName;
+    }
+
     
     void CIntN::new_sign (char _sign) {
         sign= _sign;

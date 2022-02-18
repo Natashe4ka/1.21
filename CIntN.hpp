@@ -10,20 +10,23 @@ protected:
     int* number;
     char sign;
     int lenght_number;
+    std::string file_name;
 public:
     CIntN (int);
     
     CIntN (int , std::string);
     
-    void print ();
+    void printf ();
 
-    virtual void print(const std::string& FileName);
+    virtual void print() = 0;
     
     CIntN () ;
     
-    char get_sign () ;
-    int get_lenght () ;
+    char get_sign () const;
+    int get_lenght () const;
     int* get_number () const ;
+    
+    void new_file_name (const std::string& FileName);
     
     void new_sign (char );
     
